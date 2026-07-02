@@ -1,0 +1,7 @@
+/* Print styles: force light background and hide navigation for printing */
+@media print{
+  body{background:white;color:black}
+  .site-header, nav, .site-footer{display:none}
+  .container{max-width:700px;padding:0}
+  a[href]:after{content:" (" attr(href) ")"}
+}
