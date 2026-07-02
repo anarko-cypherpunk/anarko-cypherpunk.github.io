@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+
+Sitemap: https://anarko-cypherpunk.github.io/sitemap.xml
+
+# Google-specific
+User-agent: Googlebot
+Allow: /
+
+# Bing-specific
+User-agent: Bingbot
+Allow: /
