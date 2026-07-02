@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metadata & OPSEC: Panduan Keamanan Digital untuk Aktivis</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .warning {
+            background-color: #fee;
+            border-left: 4px solid #f00;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 3px;
+        }
+        .tip {
+            background-color: #efe;
+            border-left: 4px solid #0a0;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 3px;
+        }
+        .code-block {
+            background-color: #222;
+            color: #0f0;
+            padding: 15px;
+            border-radius: 3px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        .section {
+            margin: 30px 0;
+        }
+        h1, h2, h3 {
+            color: #d32f2f;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        table th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+        .metadata-example {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 3px;
+            margin: 15px 0;
+            font-size: 12px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>🔐 Metadata & OPSEC: Panduan Keamanan Digital untuk Aktivis</h1>
+        
+        <div class="warning">
+            <strong>⚠️ PENTING:</strong> Panduan ini dirancang untuk melindungi privasi dan keamanan aktivis. Setiap gambar yang Anda bagikan secara online dapat mengungkapkan informasi sensitif tentang lokasi, perangkat, dan waktu. Pelajari cara melindungi diri Anda.
+        </div>
+
+        <div class="section">
+            <h2>📌 Apa Itu Metadata?</h2>
+            <p>
+                <strong>Metadata</strong> adalah data tentang data. Ketika Anda mengambil foto dengan smartphone atau kamera digital, file gambar tidak hanya menyimpan visual gambar, tetapi juga informasi tersembunyi seperti:
+            </p>
+            <ul>
+                <li><strong>EXIF Data:</strong> Tanggal, waktu, dan <strong>lokasi GPS</strong> pengambilan foto</li>
+                <li><strong>Model Perangkat:</strong> Merek dan model kamera atau smartphone</li>
+                <li><strong>Software:</strong> Aplikasi atau software yang digunakan</li>
+                <li><strong>Pengaturan Kamera:</strong> ISO, aperture, shutter speed</li>
+                <li><strong>Orientasi:</strong> Informasi tentang arah foto</li>
+            </ul>
+            
+            <p>
+                <strong>Mengapa ini berbahaya?</strong> Metadata dapat membocorkan:
+            </p>
+            <ul>
+                <li>📍 <strong>Lokasi tepat</strong> dimana foto diambil (latitude/longitude)</li>
+                <li>🕐 <strong>Waktu presisi</strong> ketika aktivitas terjadi</li>
+                <li>📱 <strong>Identitas perangkat</strong> yang Anda gunakan</li>
+                <li>🔗 <strong>Jejak digital</strong> yang menghubungkan Anda ke lokasi tertentu</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🔥 Studi Kasus: burningflaganarchy.png</h2>
+            
+            <p>
+                Bayangkan Anda adalah seorang aktivis yang membuat konten tentang membakar bendera sebagai bentuk protes. Anda mengambil foto dengan smartphone Anda dan ingin membagikannya online untuk menyebarkan pesan.
+            </p>
+
+            <div class="warning">
+                <strong>Skenario Berisiko:</strong> Jika Anda mengunggah <code>burningflaganarchy.png</code> tanpa menghapus metadata:
+            </div>
+
+            <div class="metadata-example">
+                <strong>Contoh Metadata dalam burningflaganarchy.png:</strong><br><br>
+File Name: burningflaganarchy.png<br>
+Date Taken: 2026-07-02 14:35:22<br>
+Camera Model: Apple iPhone 13 Pro<br>
+GPS Latitude: -6.2088° (6°12'31.68"S)<br>
+GPS Longitude: 106.8456° (106°50'44.16"E)<br>
+GPS Altitude: 45 meters<br>
+Software: Adobe Photoshop 2025<br>
+Creator: Ahmad Purnama<br>
+Copyright: ©2026 Ahmad Purnama<br>
+Modified By: anarko-cypherpunk<br>
+Device UUID: A1B2C3D4E5F6G7H8I9J0K1L2
+            </div>
+
+            <p>
+                <strong>Apa yang terjadi?</strong>
+            </p>
+            <ol>
+                <li>✗ <strong>Lokasi terungkap:</strong> GPS coordinates menunjukkan tempat tepatnya di Jakarta (Koordinat: -6.2088°, 106.8456°)</li>
+                <li>✗ <strong>Waktu terungkap:</strong> Timestamp menunjukkan jam tepatnya (14:35:22)</li>
+                <li>✗ <strong>Identitas perangkat:</strong> Model iPhone 13 Pro dapat membantu identifikasi</li>
+                <li>✗ <strong>Nama pencipta:</strong> Creator field mungkin mengandung nama asli Anda</li>
+                <li>✗ <strong>Jejak perangkat:</strong> Device UUID dapat dilacak jika tertangkap di CCTV atau sistem lain</li>
+            </ol>
+
+            <p>
+                <strong>Konsekuensi:</strong> Pemerintah, perusahaan, atau aktor berbahaya dapat menggunakan informasi ini untuk:
+            </p>
+            <ul>
+                <li>🚨 Mengidentifikasi lokasi aktivitas Anda</li>
+                <li>🚨 Menelusuri riwayat pergerakan Anda dari foto lain</li>
+                <li>🚨 Menghubungkan Anda dengan lokasi spesifik pada waktu tertentu</li>
+                <li>🚨 Mengidentifikasi perangkat yang Anda gunakan dalam aktivitas lain</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>✅ Solusi: Menghapus Metadata (Sanitasi Gambar)</h2>
+            
+            <h3>Langkah-Langkah Praktis:</h3>
+
+            <div class="tip">
+                <strong>💡 Prinsip Dasar:</strong> Selalu hapus metadata SEBELUM membagikan gambar di media sosial, forum, atau platform online apapun.
+            </div>
+
+            <h4>A. Menggunakan Tools Online (Cepat & Mudah)</h4>
+            
+            <table>
+                <tr>
+                    <th>Tool</th>
+                    <th>Cara Akses</th>
+                    <th>Kelebihan</th>
+                    <th>Kekurangan</th>
+                </tr>
+                <tr>
+                    <td><strong>ExifTool Online</strong></td>
+                    <td>verexif.com atau online-utility.org</td>
+                    <td>Gratis, tidak perlu instalasi</td>
+                    <td>File diunggah ke server pihak ketiga</td>
+                </tr>
+                <tr>
+                    <td><strong>ImageOptim (Mac)</strong></td>
+                    <td>imageoptim.com</td>
+                    <td>Otomatis, cepat, lokal</td>
+                    <td>Hanya untuk macOS</td>
+                </tr>
+                <tr>
+                    <td><strong>Verexif.com</strong></td>
+                    <td>verexif.com</td>
+                    <td>Bisa preview metadata sebelum hapus</td>
+                    <td>File diunggah online</td>
+                </tr>
+                <tr>
+                    <td><strong>GIMP (Gratis)</strong></td>
+                    <td>gimp.org</td>
+                    <td>Desktop, full control</td>
+                    <td>Perlu instalasi, kurva pembelajaran</td>
+                </tr>
+            </table>
+
+            <h4>B. Menggunakan Command Line (Untuk Linux/Mac/Windows)</h4>
+            
+            <p><strong>1. Install ExifTool:</strong></p>
+            <div class="code-block">
+# Ubuntu/Debian
+sudo apt-get install exiftool
+
+# macOS
+brew install exiftool
+
+# Windows (dengan Chocolatey)
+choco install exiftool
+            </div>
+
+            <p><strong>2. Hapus semua metadata dari gambar:</strong></p>
+            <div class="code-block">
+exiftool -all= -overwrite_original burningflaganarchy.png
+            </div>
+
+            <p><strong>3. Verifikasi metadata sudah dihapus:</strong></p>
+            <div class="code-block">
+exiftool burningflaganarchy.png
+            </div>
+
+            <h4>C. Menggunakan GIMP (GUI)</h4>
+            <ol>
+                <li>Buka GIMP dan buka file gambar (burningflaganarchy.png)</li>
+                <li>Menu → <strong>Image</strong> → <strong>Metadata</strong> → <strong>Strip EXIF</strong></li>
+                <li>Atau: Menu → <strong>Image</strong> → <strong>Crop to Image</strong> (ini juga menghapus metadata)</li>
+                <li>Simpan sebagai file baru: <strong>File</strong> → <strong>Export As</strong></li>
+            </ol>
+
+            <h4>D. Menggunakan Python Script (Otomasi Batch)</h4>
+            <div class="code-block">
+#!/usr/bin/env python3
+from PIL import Image
+import os
+import sys
+
+def remove_metadata(input_file, output_file):
+    """Hapus metadata dari gambar menggunakan Pillow"""
+    try:
+        img = Image.open(input_file)
+        
+        # Create new image tanpa metadata
+        data = list(img.getdata())
+        image_without_exif = Image.new(img.mode, img.size)
+        image_without_exif.putdata(data)
+        
+        # Simpan
+        image_without_exif.save(output_file, quality=95)
+        print(f"✓ Metadata dihapus: {output_file}")
+    except Exception as e:
+        print(f"✗ Error: {e}")
+
+# Gunakan
+if __name__ == "__main__":
+    remove_metadata("burningflaganarchy.png", "burningflaganarchy_clean.png")
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🛡️ OPSEC Best Practices untuk Aktivis</h2>
+
+            <h3>Sebelum Membuat Konten:</h3>
+            <ul>
+                <li>✓ <strong>Disable Location Services:</strong> Matikan GPS di smartphone sebelum mengambil foto</li>
+                <li>✓ <strong>Gunakan VPN:</strong> Koneksikan ke VPN sebelum mengunggah konten</li>
+                <li>✓ <strong>Gunakan Tor Browser:</strong> Untuk browsing anonymous</li>
+                <li>✓ <strong>Gunakan Perangkat Terpisah:</strong> Gunakan phone/laptop khusus untuk aktivisme</li>
+                <li>✓ <strong>Disable Auto-Upload:</strong> Jangan gunakan cloud auto-backup</li>
+            </ul>
+
+            <h3>Saat Membuat Konten:</h3>
+            <ul>
+                <li>✓ <strong>Edit Foto Secara Manual:</strong> Crop atau re-export gambar untuk menghapus metadata</li>
+                <li>✓ <strong>Ganti Nama File:</strong> Jangan simpan dengan nama yang identifying</li>
+                <li>✓ <strong>Remove Identifying Marks:</strong> Hapus plat nomor, wajah, atau identitas lainnya dari gambar</li>
+                <li>✓ <strong>Use Different Metadata:</strong> Jika perlu, ganti dengan metadata palsu</li>
+            </ul>
+
+            <h3>Sebelum Upload Online:</h3>
+            <ul>
+                <li>✓ <strong>Verify Metadata Removed:</strong> Cek ulang metadata sudah hilang dengan ExifTool</li>
+                <li>✓ <strong>Use Tor/Proxy:</strong> Upload melalui Tor atau proxy server</li>
+                <li>✓ <strong>Use Different Account:</strong> Jangan gunakan akun pribadi</li>
+                <li>✓ <strong>Vary Upload Times:</strong> Jangan upload secara konsisten dari lokasi yang sama</li>
+                <li>✓ <strong>Use Platform Aman:</strong> Lebih baik gunakan platform seperti Mastodon, Pixelfed, atau forum anonim</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📊 Checklist Keamanan untuk burningflaganarchy.png</h2>
+
+            <div style="background-color: #f5f5f5; padding: 15px; border-radius: 3px; margin: 15px 0;">
+                <input type="checkbox"> 1. Disable GPS/Location sebelum mengambil foto<br>
+                <input type="checkbox"> 2. Backup gambar original ke lokasi aman (offline)<br>
+                <input type="checkbox"> 3. Run ExifTool untuk lihat semua metadata: <code>exiftool burningflaganarchy.png</code><br>
+                <input type="checkbox"> 4. Hapus semua metadata: <code>exiftool -all= -overwrite_original burningflaganarchy.png</code><br>
+                <input type="checkbox"> 5. Verifikasi metadata hilang: <code>exiftool burningflaganarchy.png</code> (seharusnya kosong)<br>
+                <input type="checkbox"> 6. (Opsional) Crop/re-export gambar di GIMP untuk extra safety<br>
+                <input type="checkbox"> 7. Change filename ke yang lebih generic: <code>burningflaganarchy_clean.png</code><br>
+                <input type="checkbox"> 8. Gunakan VPN sebelum upload<br>
+                <input type="checkbox"> 9. Upload dari incognito/private mode di browser<br>
+                <input type="checkbox"> 10. Verifikasi lagi di platform bahwa metadata tidak terlihat<br>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>⚙️ Command Line Reference</h2>
+
+            <h4>1. Lihat semua metadata:</h4>
+            <div class="code-block">
+exiftool burningflaganarchy.png
+exiftool -a burningflaganarchy.png  # All tags including MakerNote
+            </div>
+
+            <h4>2. Hapus metadata spesifik:</h4>
+            <div class="code-block">
+# Hapus GPS saja
+exiftool -GPSInfo= -overwrite_original burningflaganarchy.png
+
+# Hapus EXIF saja
+exiftool -EXIF= -overwrite_original burningflaganarchy.png
+
+# Hapus Creator/Author
+exiftool -Creator= -Artist= -Author= -overwrite_original burningflaganarchy.png
+            </div>
+
+            <h4>3. Tambahkan metadata palsu (opsional):</h4>
+            <div class="code-block">
+# Ganti tanggal pengambilan
+exiftool -DateTimeOriginal="2020:01:01 00:00:00" -overwrite_original burningflaganarchy.png
+
+# Ganti model kamera
+exiftool -Model="Canon EOS 5D Mark IV" -overwrite_original burningflaganarchy.png
+            </div>
+
+            <h4>4. Batch processing (banyak file):</h4>
+            <div class="code-block">
+# Hapus metadata dari semua .png files
+exiftool -all= -overwrite_original *.png
+
+# Hapus metadata dari folder recursive
+exiftool -r -all= -overwrite_original /path/to/folder/
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🔗 Resource & Tools Tambahan</h2>
+            
+            <h3>Recommended Tools:</h3>
+            <ul>
+                <li><strong>ExifTool:</strong> exiftool.org - Command line tool terbaik</li>
+                <li><strong>GIMP:</strong> gimp.org - Free image editor dengan metadata removal</li>
+                <li><strong>ImageOptim:</strong> imageoptim.com - Mac app untuk cleanup otomatis</li>
+                <li><strong>Verexif:</strong> verexif.com - Online metadata viewer & remover</li>
+                <li><strong>Tor Browser:</strong> torproject.org - Anonymous browsing</li>
+                <li><strong>ProtonVPN:</strong> protonvpn.com - Encrypted VPN</li>
+            </ul>
+
+            <h3>Learn More:</h3>
+            <ul>
+                <li>EXIF Data pada Wikipedia: wikipedia.org/wiki/Exif</li>
+                <li>EFF Guide to OPSEC: eff.org</li>
+                <li>Privacy International: privacyinternational.org</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>⚖️ Catatan Legal & Etika</h2>
+            
+            <p>
+                Panduan ini disediakan untuk tujuan <strong>pendidikan dan privasi</strong>. Metadata removal adalah hak fundamental untuk melindungi privasi Anda.
+            </p>
+            
+            <p>
+                <strong>Namun:</strong> Penggunaan konten untuk tujuan ilegal tetap ilegal, terlepas dari apakah metadata dihapus atau tidak. Panduan ini tidak mendorong aktivitas melanggar hukum.
+            </p>
+
+            <p>
+                <strong>Tanggung jawab Anda:</strong> Pastikan konten yang Anda buat sesuai dengan hukum lokal dan tidak merugikan pihak lain.
+            </p>
+        </div>
+
+        <div class="warning" style="margin-top: 40px;">
+            <strong>⚠️ Disclaimer:</strong> Informasi dalam panduan ini disediakan sebagai referensi pendidikan. Kami tidak bertanggung jawab atas penggunaan informasi ini. Selalu ikuti hukum setempat dan pertimbangkan risiko sebelum membuat konten sensitif.
+        </div>
+
+        <hr style="margin: 40px 0; border: none; border-top: 2px solid #ddd;">
+        
+        <p style="text-align: center; color: #666; font-size: 12px; margin-top: 20px;">
+            Panduan Metadata & OPSEC untuk Aktivis | Anarko Cypherpunk Indonesia<br>
+            Last Updated: 2026-07-02
+        </p>
+    </div>
+</body>
+</html>
