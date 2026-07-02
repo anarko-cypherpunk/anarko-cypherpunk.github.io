@@ -1,0 +1,3 @@
+Contact: mailto:anarchy_cypherpunk@tuta.io
+Preferred-Languages: id, en
+Canonical: https://anarko-cypherpunk.github.io/.well-known/security.txt
